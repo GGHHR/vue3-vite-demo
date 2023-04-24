@@ -1,13 +1,23 @@
 <script setup>
 import HelloWorld from './components/HelloWorld.vue'
+import { inject,ref} from 'vue'
+
+console.log(inject('message'))
+
+ let msg=ref(1)
+
+function msgFn(data) {
+    msg.value+=data
+}
+
+console.log(process.env.NODE_ENV)
 </script>
 
 <template>
-
-  <HelloWorld msg="Vite + Vue" />
+  <HelloWorld  :msg='msg' @msgFn="msgFn"/>
 </template>
 
-<style scoped>
+<style scoped lang="scss">
 .logo {
   height: 6em;
   padding: 1.5em;

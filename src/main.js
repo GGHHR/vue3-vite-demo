@@ -4,8 +4,8 @@ import App from './App.vue'
 import router from './assets/router/index.js'
 
 
+let app = createApp(App);
 
+    app.provide('message', 'hello')
 
-
-
-createApp(App).use(router).mount('#app')
+    app.use(router).mount('#app')

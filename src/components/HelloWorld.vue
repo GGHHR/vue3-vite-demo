@@ -1,5 +1,5 @@
 <script setup>
-import {onMounted, ref} from 'vue'
+import {onMounted, ref, toRefs} from 'vue'
 import * as echarts from 'echarts';
 
 
@@ -25,7 +25,7 @@ for (var i = 0; i < 1000; i++) {
 var option;
 option = {
     title: {
-        text: 'Dynamic Data & Time Axis'
+        text: ''
     },
     tooltip: {
         trigger: 'axis',
@@ -73,60 +73,40 @@ option = {
 
 
 
-
-
-
-
-defineProps({
-  msg: String,
-})
-
 const count = ref(0)
 
 
 
-onMounted(()=>{
 
-    var chartDom = document.getElementById('main');
 
-    console.log(echarts)
-    console.log(chartDom)
-
-    var myChart = echarts.init(chartDom);
-    option && myChart.setOption(option);
-    setInterval(function () {
-        for (var i = 0; i < 5; i++) {
-            data.shift();
-            data.push(randomData());
-        }
-        myChart.setOption({
-            series: [
-                {
-                    data: data
-                }
-            ]
-        });
-    }, 1000);
+let props=defineProps({
+    msg: 'number',
 })
 
-console.log(count)
+const emit = defineEmits(['msgFn'])
 
 
-function count2() {
-    count.value++
-    console.log(count)
-}
+
 </script>
 
 <template>
-
+    <div class="ft_2">{{msg}}</div>
+    <div class="ft_22" @click=" emit('msgFn',3)">+</div>
     <div id="main" style="height: 600px;width: 1000px">
-
     </div>
 </template>
 
-<style scoped>
-.read-the-docs {
-  color: #888;
+<style scoped lang="scss">
+
+
+@mixin  rounded-corners (){
+ color: red
+}
+.ft_2 {
+  color: red;
+    width:100 - 3px;
+}
+.ft_22{
+    @extend .ft_2;
 }
 </style>
