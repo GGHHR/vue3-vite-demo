@@ -8,4 +8,5 @@ let app = createApp(App);
 
     app.provide('message', 'hello')
 
-    app.use(router).mount('#app')
+    app.use(router)
+       .mount('#app')
