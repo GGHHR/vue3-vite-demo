@@ -11,6 +11,11 @@ function msgFn(data) {
 }
 
 console.log(process.env.NODE_ENV)
+
+var aa=function (){
+    console.log(window)
+}
+aa()
 </script>
 
 <template>

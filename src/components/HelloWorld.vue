@@ -1,9 +1,9 @@
 <script setup>
-import {onMounted, ref, toRefs} from 'vue'
-import * as echarts from 'echarts';
+import {onMounted, ref, toRefs, watchEffect} from 'vue'
+import {useRoute, useRouter} from "vue-router";
 
-
-
+console.log(useRoute().query)
+useRouter().push('/users/eduardo')
 function randomData() {
     now = new Date(+now + oneDay);
     value = value + Math.random() * 21 - 10;
@@ -75,7 +75,11 @@ option = {
 
 const count = ref(0)
 
+watchEffect(() => {
 
+    console.log(count.value)
+})
+count.value++;
 
 
 
@@ -100,10 +104,10 @@ const emit = defineEmits(['msgFn'])
 
 
 @mixin  rounded-corners (){
- color: red
+    color: red
 }
 .ft_2 {
-  color: red;
+    color: red;
     width:100 - 3px;
 }
 .ft_22{
