@@ -30,8 +30,8 @@ jobs:
     - run: npm run build --if-present
     
     - name: Archive
-      uses: actions/setup-node@v3
+      uses: actions/upload-artifact@v3
       with:
-          name: dist-without-markdown
+          name: upload
           path: |
             dist
