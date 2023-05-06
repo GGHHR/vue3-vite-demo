@@ -1,13 +1,14 @@
 <script setup>
-import {onMounted, ref, toRefs, watchEffect} from 'vue'
-import {useRoute, useRouter} from "vue-router";
-
-console.log(useRoute().query)
-useRouter().push('/users/eduardo')
+import {provide, ref, watchEffect} from 'vue'
+import abc from     './abc.vue'
+// console.log(useRoute().query)
+// useRouter().push('/users/eduardo')
 function randomData() {
     now = new Date(+now + oneDay);
     value = value + Math.random() * 21 - 10;
     return {
+
+
         name: now.toString(),
         value: [
             [now.getFullYear(), now.getMonth() + 1, now.getDate()].join('/'),
@@ -70,34 +71,23 @@ option = {
 };
 
 
+provide(/* 注入名 */ 'message', /* 值 */ 'hello!')
 
 
-
-const count = ref(0)
+const count = ref(9999)
 
 watchEffect(() => {
-
     console.log(count.value)
 })
+
 count.value++;
-
-
-
-let props=defineProps({
-    msg: 'number',
-})
-
-const emit = defineEmits(['msgFn'])
-
 
 
 </script>
 
 <template>
-    <div class="ft_2">{{msg}}</div>
-    <div class="ft_22" @click=" emit('msgFn',3)">+</div>
-    <div id="main" style="height: 600px;width: 1000px">
-    </div>
+    <h1>hello{{count}}</h1>
+    <abc :count="count" @update:count="count = $event"></abc>
 </template>
 
 <style scoped lang="scss">

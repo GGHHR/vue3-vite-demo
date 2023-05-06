@@ -1,25 +1,20 @@
 <script setup>
-import HelloWorld from './components/HelloWorld.vue'
-import { inject,ref} from 'vue'
+import {inject, ref} from 'vue'
 
-console.log(inject('message'))
 
- let msg=ref(1)
+let msg=ref(1)
 
 function msgFn(data) {
     msg.value+=data
 }
 
-console.log(process.env.NODE_ENV)
 
-var aa=function (){
-    console.log(window)
-}
-aa()
+
+
 </script>
 
 <template>
-  <HelloWorld  :msg='msg' @msgFn="msgFn"/>
+    <router-view></router-view>
 </template>
 
 <style scoped lang="scss">
