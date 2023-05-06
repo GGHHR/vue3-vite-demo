@@ -6,7 +6,6 @@
 </template>
 
 <script setup>
-import { inject, defineProps, defineEmits } from "vue";
 
 const props = defineProps({
     count: Number,
