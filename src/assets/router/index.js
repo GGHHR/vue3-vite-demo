@@ -7,8 +7,8 @@ const router = createRouter({
     routes :[
                 { path: '/', component: () =>import("@/App.vue") },
                 { path: '/father', component:() =>import("@/components/props/father.vue") },
-                 { path: '/store', component: () =>import("@/components/store/store.vue") },
-                 { path: '/s2', component: () =>import("@/components/store/s2.vue") },
+                { path: '/store', component: () =>import("@/components/store/store.vue") },
+                { path: '/s2', component: () =>import("@/components/store/s2.vue") },
     ],
 })
 

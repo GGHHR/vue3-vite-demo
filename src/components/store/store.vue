@@ -9,11 +9,11 @@
 import { useCounterStore } from "@/assets/store";
 
 const store = useCounterStore();
-
+store.increment()
 console.log(store.count);
 
 store.$subscribe((mutation, state) => {
-    console.log("变了");
+    console.log("变到"+store.count);
 });
 
 store.count += 22;
