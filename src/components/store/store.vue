@@ -24,4 +24,9 @@ function reset() {
 }
 </script>
 
-<style scoped lang="scss"></style>
+<style scoped lang="scss">
+    div {
+        color: red;
+    }
+
+</style>
