@@ -12,6 +12,14 @@ watch(count,() => {
 count.value++;
 
 
+
+import {useCounterStore} from "@/assets/store";
+
+const store = useCounterStore()
+
+store.count++
+
+console.log(store.count+=333);
 </script>
 
 <template>

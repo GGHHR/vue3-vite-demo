@@ -6,9 +6,10 @@ const router = createRouter({
     history: createWebHistory(),
     routes :[
                 { path: '/', component: () =>import("@/App.vue") },
-                { path: '/hw', component:() =>import("@/components/props/father.vue") },
-                { path: '/about/:id*', component: () =>import("@/components/props/abc.vue") },
-            ],
+                { path: '/father', component:() =>import("@/components/props/father.vue") },
+                 { path: '/store', component: () =>import("@/components/store/store.vue") },
+                 { path: '/s2', component: () =>import("@/components/store/s2.vue") },
+    ],
 })
 
 //
