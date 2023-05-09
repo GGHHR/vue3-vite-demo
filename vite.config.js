@@ -1,33 +1,47 @@
 import {defineConfig} from 'vite'
 import vue from '@vitejs/plugin-vue'
 import {join} from "path";
+import {ElementPlusResolver} from "unplugin-vue-components/resolvers";
+import AutoImport from 'unplugin-auto-import/vite'
+import Components from 'unplugin-vue-components/vite'
 
-const { terser } = require('rollup-plugin-terser');
+
+const {terser} = require('rollup-plugin-terser');
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [vue()],
-  build: {
-    sourcemap:process.env.NODE_ENV=="development",
-    terserOptions: {
-      compress: {
-        drop_console: true,
-        drop_debugger: true
-      }
+
+    plugins: [
+        vue(),
+
+    ],
+    build: {
+        sourcemap: process.env.NODE_ENV == "development",
+        terserOptions: {
+            compress: {
+                drop_console: true,
+                drop_debugger: true
+            }
+        },
+        rollupOptions: {
+            plugins: [
+                terser({
+                    format: {
+                        comments: false,
+                    },
+                }),
+                AutoImport({
+                    resolvers: [ElementPlusResolver()],
+                }),
+                Components({
+                    resolvers: [ElementPlusResolver()],
+                }),
+            ],
+        },
     },
-    rollupOptions: {
-      plugins: [
-        terser({
-          format: {
-            comments: false,
-          },
-        }),
-      ],
-    },
-  },
-  resolve: {
-    alias: {
-      '@': join(__dirname, "src"),
+    resolve: {
+        alias: {
+            '@': join(__dirname, "src")
+        }
     }
-  }
 })

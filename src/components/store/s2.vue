@@ -1,16 +1,19 @@
 <script setup>
 import {useCounterStore} from "@/assets/store";
 import {getCurrentInstance, ref} from "vue";
+
+import { ElButton } from 'element-plus'
+
 const store = useCounterStore()
 
 
 /*请求*/
-let{proxy}=getCurrentInstance()
-proxy.$axios.get("/api/").then(() => {
-
-}).catch((a)=>{
-    console.log(a)
-});
+// let{proxy}=getCurrentInstance()
+// proxy.$axios.get("/api/").then(() => {
+//
+// }).catch((a)=>{
+//     console.log(a)
+// });
 
 
 
@@ -20,7 +23,14 @@ proxy.$axios.get("/api/").then(() => {
 </script>
 
 <template>
-
+    <div class="example-pagination-block">
+        <div class="example-demonstration">When you have few pages</div>
+        <el-pagination layout="prev, pager, next" :total="50" />
+    </div>
+    <div class="example-pagination-block">
+        <div class="example-demonstration">When you have more than 7 pages</div>
+        <el-pagination layout="prev, pager, next" :total="1000" />
+    </div>
     <div>
         <router-link to="store">跳到store</router-link>
     </div>
@@ -29,7 +39,6 @@ proxy.$axios.get("/api/").then(() => {
     </div>
 
 
-     <div v-for="v in a">{{v}}</div>
 </template>
 
 <style scoped lang="scss">

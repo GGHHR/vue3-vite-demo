@@ -17,7 +17,9 @@ function msgFn(data) {
     <router-view></router-view>
 </template>
 
-<style scoped lang="scss">
+<style  lang="scss">
+@import  "./assets/css/initcss.scss";
+
 .logo {
   height: 6em;
   padding: 1.5em;
