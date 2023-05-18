@@ -1,5 +1,5 @@
 <script setup>
-import {inject, ref} from 'vue'
+import { ref} from 'vue'
 
 
 let msg=ref(1)
@@ -7,9 +7,6 @@ let msg=ref(1)
 function msgFn(data) {
     msg.value+=data
 }
-
-
-
 
 </script>
 

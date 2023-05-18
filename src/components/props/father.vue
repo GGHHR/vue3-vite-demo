@@ -1,5 +1,5 @@
 <script setup>
-import {provide, ref, watch, watchEffect} from 'vue'
+import { ref, toRaw, watch} from 'vue'
 import abc from     './abc.vue'
 
 import {useCounterStore} from "@/assets/store";
@@ -17,6 +17,9 @@ watch(count,() => {
 
 count.value++;
 
+const aa = ref({a:1,b:2})
+
+console.log(toRaw(aa.value))
 
 </script>
 

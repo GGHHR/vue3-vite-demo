@@ -7,7 +7,6 @@
 
 <script setup>
 import { useCounterStore } from "@/assets/store";
-import {getCurrentInstance} from "vue";
 
 const store = useCounterStore();
 store.increment()
@@ -23,10 +22,6 @@ function reset() {
     store.$reset();
     console.log(store.count);
 }
-
-
-
-
 
 </script>
 
