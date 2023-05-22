@@ -5,7 +5,7 @@ import axios_config from "@/assets/axios/axios_config";
 import ElementPlus from 'element-plus'
 import { createPinia } from 'pinia'
 import piniaPluginPersistedstate from 'pinia-plugin-persistedstate'
-
+import zhCn from 'element-plus/dist/locale/zh-cn.mjs'
 
 const pinia = createPinia()
 /*pinia持久化*/
@@ -16,5 +16,7 @@ let app = createApp(App);
 
     app.use(router)
         .use(pinia)
-        .use(ElementPlus)
+        .use(ElementPlus, {
+            locale: zhCn,
+        })
         .mount('#app')
