@@ -3,7 +3,7 @@
 </script>
 
 <template>
-  <router-link to="aa/a2">跳到father</router-link>
+a3
 </template>
 
 <style scoped lang="scss">

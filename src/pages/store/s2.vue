@@ -32,10 +32,10 @@ const store = useCounterStore()
         <el-pagination layout="prev, pager, next" :total="1000" />
     </div>
     <div>
-        <router-link to="store">跳到store</router-link>
+        <router-link to="/store/store">跳到store</router-link>
     </div>
     <div>
-        <router-link to="father">跳到father</router-link>
+        <router-link to="/props/father">跳到father</router-link>
     </div>
 
 

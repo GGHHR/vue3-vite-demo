@@ -26,7 +26,7 @@ console.log(toRaw(aa.value))
 <template>
 
 
-    <div><router-link to="store">跳到store</router-link></div>
+    <div><router-link to="/store/store">跳到store</router-link></div>
 
     <h1>hello{{count}}</h1>
 
