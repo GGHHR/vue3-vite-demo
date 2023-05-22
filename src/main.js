@@ -7,7 +7,8 @@ import { createPinia } from 'pinia'
 import piniaPluginPersistedstate from 'pinia-plugin-persistedstate'
 import zhCn from 'element-plus/dist/locale/zh-cn.mjs'
 
-const pinia = createPinia()
+const pinia = createPinia();
+
 /*pinia持久化*/
 pinia.use(piniaPluginPersistedstate);
 

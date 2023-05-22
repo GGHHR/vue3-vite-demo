@@ -34,13 +34,11 @@ const store = useCounterStore()
     <div>
         <router-link to="/store/store">跳到store</router-link>
     </div>
+
     <div>
         <router-link to="/props/father">跳到father</router-link>
     </div>
 
-
 </template>
 
-<style scoped lang="scss">
-
-</style>
+<style scoped lang="scss"></style>
