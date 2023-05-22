@@ -15,7 +15,10 @@ function msgFn(data) {
 </template>
 
 <style  lang="scss">
+@import 'element-plus/dist/index.css';
 @import  "./assets/css/initcss.scss";
+@import './assets/css/style.css';
+
 
 .logo {
   height: 6em;

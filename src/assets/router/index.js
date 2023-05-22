@@ -9,7 +9,7 @@ const router = createRouter({
 
     ].concat(routes)
 })
-console.log(routes)
+
 //
 // 导出默认值
 export default router
