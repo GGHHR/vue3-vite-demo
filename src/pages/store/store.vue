@@ -6,7 +6,7 @@
 </template>
 
 <script setup>
-import { useCounterStore } from "@/assets/store";
+import { useCounterStore } from "@/assets/store/store";
 
 const store = useCounterStore();
 store.increment()

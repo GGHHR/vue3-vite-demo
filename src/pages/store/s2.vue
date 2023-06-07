@@ -1,5 +1,5 @@
 <script setup>
-import {useCounterStore} from "@/assets/store";
+import {useCounterStore} from "@/assets/store/store";
 import {getCurrentInstance, ref} from "vue";
 
 import { ElButton } from 'element-plus'

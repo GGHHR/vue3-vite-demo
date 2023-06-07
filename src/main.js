@@ -1,7 +1,7 @@
 import {createApp} from 'vue'
 import App from './App.vue'
-import router from './assets/router/index.js'
-import axios_config from "@/assets/axios/axios_config";
+import router from './assets/router/router.js'
+import axios_config from "@/assets/axios/axios";
 import ElementPlus from 'element-plus'
 import { createPinia } from 'pinia'
 import piniaPluginPersistedstate from 'pinia-plugin-persistedstate'

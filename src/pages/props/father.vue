@@ -2,7 +2,7 @@
 import { ref, toRaw, watch} from 'vue'
 import abc from     './abc.vue'
 
-import {useCounterStore} from "@/assets/store";
+import {useCounterStore} from "@/assets/store/store";
 const store = useCounterStore()
 console.log(store.count);
 
