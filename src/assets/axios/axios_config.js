@@ -6,7 +6,7 @@ axios.interceptors.request.use(function (config) {
 
     console.log(config)
 
-    config.baseURL="https://baidu.com/"
+    // config.baseURL="https://baidu.com/"
 
 
     return config;

@@ -9,7 +9,7 @@ import Pages from 'vite-plugin-pages'
 
 const {terser} = require('rollup-plugin-terser');
 
-// https://vitejs.dev/config/
+
 export default defineConfig({
 
     plugins: [

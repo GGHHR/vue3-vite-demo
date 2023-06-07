@@ -9,9 +9,13 @@
 
 const props = defineProps({
     count: Number,
-});
+})
+
+
+
 /*接收定义事件*/
 const emit = defineEmits(['update:count']);
+
 
 function add() {
     emit('update:count', props.count + 1)

@@ -13,6 +13,7 @@ const pinia = createPinia();
 pinia.use(piniaPluginPersistedstate);
 
 let app = createApp(App);
+
     app.config.globalProperties.$axios=axios_config;
 
     app.use(router)
