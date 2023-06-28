@@ -1,13 +1,4 @@
 <script setup>
-import { ref} from 'vue'
-
-
-let msg=ref(1)
-
-function msgFn(data) {
-    msg.value+=data
-}
-
 </script>
 
 <template>
