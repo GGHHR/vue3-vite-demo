@@ -5,7 +5,7 @@ const router = createRouter({
     // 使用hash(createWebHashHistory)模式，(createWebHistory是HTML5历史模式，支持SEO)
     history: createWebHistory(),
     routes:[
-        { path: '/', component: () =>import("@/pages/props/father.vue") },
+        // { path: '/', component: () =>import("@/pages/props/father.vue") },
 
     ].concat(routes)
 })
