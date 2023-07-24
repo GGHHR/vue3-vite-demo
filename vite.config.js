@@ -9,7 +9,12 @@ import Pages from 'vite-plugin-pages'
 
 const {terser} = require('rollup-plugin-terser');
 
+const isProduction = process.env.NODE_ENV === 'production';
 
+
+let base_url="http://192.168.1.102:5000/";
+
+let socket_url="ws://192.168.1.226:5000";
 export default defineConfig({
 
     plugins: [
@@ -17,7 +22,8 @@ export default defineConfig({
         Pages()
     ],
     build: {
-        sourcemap: process.env.NODE_ENV == "development",
+        sourcemap: !isProduction,
+        minify:  'terser',
         terserOptions: {
             compress: {
                 drop_console: true,
@@ -44,5 +50,10 @@ export default defineConfig({
         alias: {
             '@': join(__dirname, "src")
         }
+    },
+    define: {
+        // 添加全局变量
+        base_url: JSON.stringify(base_url),
+        socket_url: JSON.stringify(socket_url)
     }
 })
