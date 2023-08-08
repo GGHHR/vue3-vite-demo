@@ -4,7 +4,7 @@ import {join} from "path";
 import {ElementPlusResolver} from "unplugin-vue-components/resolvers";
 import AutoImport from 'unplugin-auto-import/vite'
 import Components from 'unplugin-vue-components/vite'
-
+import terser from '@rollup/plugin-terser';
 import Pages from 'vite-plugin-pages'
 
 
@@ -18,7 +18,8 @@ export default defineConfig({
 
     plugins: [
         vue(),
-        Pages()
+        Pages(),
+        terser()
     ],
     build: {
         sourcemap: !isProduction,

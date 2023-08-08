@@ -17,6 +17,7 @@
         "vue-router": "^4.2.4"
     },
     "devDependencies": {
+        "@rollup/plugin-terser": "^0.4.3",
         "@vitejs/plugin-vue": "^4.2.3",
         "sass": "^1.64.2",
         "sass-loader": "^13.3.2",
