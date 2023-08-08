@@ -7,7 +7,6 @@ import Components from 'unplugin-vue-components/vite'
 
 import Pages from 'vite-plugin-pages'
 
-const {terser} = require('rollup-plugin-terser');
 
 const isProduction = process.env.NODE_ENV === 'production';
 
@@ -23,20 +22,8 @@ export default defineConfig({
     ],
     build: {
         sourcemap: !isProduction,
-        minify:  'terser',
-        terserOptions: {
-            compress: {
-                drop_console: true,
-                drop_debugger: true
-            }
-        },
         rollupOptions: {
             plugins: [
-                terser({
-                    format: {
-                        comments: false,
-                    },
-                }),
                 AutoImport({
                     resolvers: [ElementPlusResolver()],
                 }),
