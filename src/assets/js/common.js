@@ -1,17 +1,18 @@
 import {dayjs} from "element-plus";
 import router from "@/assets/router/router";
 import {watch,onBeforeUnmount} from "vue";
-
+/*时间格式*/
 export let formatter_datetime=function (row){
     const dateTime = dayjs(row);
     return dateTime.format('YYYY-MM-DD HH:mm:ss');
 }
+/*监控路由变化*/
 export let watch_router=function (fun){
     watch(() =>router.currentRoute.value.path,(newValue,oldValue)=> {
         fun(newValue,oldValue)
     },{ immediate: true })
 }
-
+/*socket*/
 export let  ws_fun=function (fun, wsUrl) {
     let ws = null;
     var lockReconnect = false;
