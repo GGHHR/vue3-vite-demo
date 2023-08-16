@@ -11,9 +11,9 @@ import Pages from 'vite-plugin-pages'
 const isProduction = process.env.NODE_ENV === 'production';
 
 
-let base_url="http://192.168.1.102:5000/";
+let base_url=isProduction?"https://localhost:7248/":"http://192.168.1.102:5000/";
 
-let socket_url="ws://192.168.1.226:5000";
+let socket_url=isProduction?"wss://localhost:7248/":"ws://192.168.1.226:5000";
 export default defineConfig({
 
     plugins: [
