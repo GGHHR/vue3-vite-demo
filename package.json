@@ -19,7 +19,7 @@
     "devDependencies": {
         "@rollup/plugin-terser": "^0.4.3",
         "@vitejs/plugin-vue": "^4.2.3",
-        "sass": "^1.64.2",
+        "sass": "^1.65.1",
         "sass-loader": "^13.3.2",
         "unplugin-auto-import": "^0.16.6",
         "unplugin-vue-components": "^0.25.1",
