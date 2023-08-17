@@ -21,13 +21,7 @@ export let  ws_fun=function (fun, wsUrl) {
     function createWebSocket(url) {
         try {
             if ('WebSocket' in window) {
-                // ws= new WebSocket('ws://127.0.0.1:63423/plot/status?auth=123')
                 ws = new WebSocket(wsUrl)
-
-                /*setInterval(function(){
-                    console.log(1)
-                    ws.send('"keep"');
-                },1000)*/
             }
             initEventHandle();
         } catch (e) {
@@ -37,22 +31,17 @@ export let  ws_fun=function (fun, wsUrl) {
     }
 
     function initEventHandle() {
-
         ws.onerror = function () {
             reconnect(wsUrl);
-            console.log("llws连接错误!");
+            console.log("ws连接错误!");
         };
         ws.onopen = function () {
             heartCheck.reset().start();      //心跳检测重置
-            console.log("llws连接成功!" + new Date().toLocaleString());
+            console.log("ws连接成功!" + new Date().toLocaleString());
         };
         ws.onmessage = function (event) {    //如果获取到消息，心跳检测重置
-
-
             heartCheck.reset().start();      //拿到任何消息都说明当前连接是正常的
-            // console.log("llws收到消息啦:" +event.data);
             if (!event.data.includes('ok')) {
-                //let data = jsON.parse(event.data);
                 fun(event)
             }
         };
@@ -67,7 +56,9 @@ export let  ws_fun=function (fun, wsUrl) {
     function reconnect(url) {
         if (lockReconnect) return;
         lockReconnect = true;
-        setTimeout(function () {     //没连接上会一直重连，设置延迟避免请求过多
+        setTimeout(function () {
+            //离开页面就不让重连了
+            if(ws==undefined)return;
             createWebSocket(url);
             lockReconnect = false;
         }, 2000);
@@ -106,7 +97,7 @@ export let  ws_fun=function (fun, wsUrl) {
     }
     onBeforeUnmount(() => {
         ws.close();
-        ws = null;
+        ws = undefined;
         clearTimeout(heartCheck.timeoutObj);
         clearTimeout(heartCheck.serverTimeoutObj);
     })
